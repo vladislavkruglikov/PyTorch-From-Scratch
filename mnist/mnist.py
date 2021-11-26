@@ -18,18 +18,25 @@ X = (X / 255).astype('float32')
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
 model = nn.Sequential(
-    nn.Linear(784, 200),
+    nn.Linear(784, 512),
     nn.Sigmoid(),
     nn.Dropout(pKeep=0.8),
 
-    nn.Linear(200, 80),
+    nn.Linear(512, 256),
     nn.Sigmoid(),
 
-    nn.Linear(80, 10),
+    nn.Linear(256, 128),
+    nn.Sigmoid(),
+
+    nn.Linear(128, 64),
+    nn.Sigmoid(),
+
+    nn.Linear(64, 10),
+
     nn.SoftMax(),
 )
 
-epochs = 300
+epochs = 60
 eval_every = 1
 batch_size = 1024
 criterion = nn.CrossEntropy()
