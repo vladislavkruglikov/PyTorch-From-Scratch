@@ -1,2 +1,3 @@
-# Neural Network Framework 🍷
-Inspired PyTorch Architecture design and simplicity
+# Neural Network Framework
+
+#### [Kaggle Notebook](https://www.kaggle.com/lildatascientist/neural-network-from-scratch/edit)
